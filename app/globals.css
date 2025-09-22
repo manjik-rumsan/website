@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light theme with gradient-enhanced Light Blue and Light Grey */
+    --background: 0 0% 98%; /* Very light base */
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%; /* Pure white for cards with gradient overlay */
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 188 85% 35%; /* Rich blue from your palette */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 188 100% 95%; /* Very light blue */
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 0 0% 96%; /* Light grey */
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 188 70% 85%; /* Medium light blue */
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 188 30% 88%; /* Soft blue border */
+    --input: 0 0% 98%; /* Very light grey for inputs */
+    --ring: 188 85% 35%;
+
+    --radius: 0.5rem;
+
+    /* Custom gradient colors */
+    --gradient-light-blue: #C7F7FF;
+    --gradient-light-grey: #F5F5F5;
+    --gradient-blue-to-grey: linear-gradient(135deg, #C7F7FF 0%, #F5F5F5 100%);
+    --gradient-grey-to-blue: linear-gradient(135deg, #F5F5F5 0%, #C7F7FF 100%);
+    --gradient-radial: radial-gradient(circle at 30% 40%, #C7F7FF 0%, #F5F5F5 50%, #FFFFFF 100%);
+  }
+
+  .dark {
+    /* Updated color tokens for Rumsan branding */
+    --background: 210 40% 11%; /* Dark gray background */
+    --foreground: 0 0% 100%; /* Pure white text */
+
+    --card: 215 25% 17%; /* Darker gray for cards */
+    --card-foreground: 0 0% 100%; /* White text on cards */
+
+    --popover: 188 100% 19%; /* Cyan for popovers */
+    --popover-foreground: 0 0% 100%; /* White text on popovers */
+
+    --primary: 188 100% 19%; /* Cyan-800 primary color */
+    --primary-foreground: 0 0% 100%; /* White text on primary */
+
+    --secondary: 43 96% 56%; /* Amber accent color */
+    --secondary-foreground: 210 40% 11%; /* Dark text on secondary */
+
+    --muted: 215 14% 42%; /* Muted gray */
+    --muted-foreground: 0 0% 100%; /* White text on muted */
+
+    --accent: 43 96% 56%; /* Amber accent */
+    --accent-foreground: 210 40% 11%; /* Dark text on accent */
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 25% 17%; /* Gray borders */
+    --input: 215 25% 17%; /* Input backgrounds */
+    --ring: 43 96% 56%; /* Amber focus ring */
+
+    /* Added chart colors for data visualization */
+    --chart-1: 221 83% 53%;
+    --chart-2: 262 83% 58%;
+    --chart-3: 43 96% 56%;
+    --chart-4: 0 84% 60%;
+    --chart-5: 142 76% 36%;
+
+    /* Added sidebar tokens */
+    --sidebar: 210 40% 11%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 188 100% 19%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 43 96% 56%;
+    --sidebar-accent-foreground: 210 40% 11%;
+    --sidebar-border: 215 25% 17%;
+    --sidebar-ring: 43 96% 56%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Apply beautiful gradient background */
+    background: var(--gradient-radial);
+    min-height: 100vh;
+  }
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+/* Custom gradient utilities */
+@layer utilities {
+  .bg-gradient-blue-grey {
+    background: var(--gradient-blue-to-grey);
+  }
+  
+  .bg-gradient-grey-blue {
+    background: var(--gradient-grey-to-blue);
+  }
+  
+  .bg-gradient-radial {
+    background: var(--gradient-radial);
+  }
+  
+  /* Hero section gradients - smooth fade */
+  .hero-gradient {
+    background: linear-gradient(135deg, 
+      rgba(199, 247, 255, 0.8) 0%, 
+      rgba(245, 245, 245, 0.6) 50%, 
+      rgba(255, 255, 255, 0.4) 80%,
+      transparent 100%);
+  }
+}
